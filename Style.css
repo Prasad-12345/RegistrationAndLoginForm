@@ -1,0 +1,96 @@
+*{
+    padding: 0px ;
+    margin: 0px;
+    font-family:sans-serif ;
+    color: rgb(33, 31, 31);
+    font-size: 18px;
+}
+
+body{
+    background-image: url(Image.download.jpg);
+    background-size: cover;
+    text-align: center;
+}
+
+ tbody{
+    border-bottom: 1px solid rgb(240, 236, 236);
+    color: rgba(212, 208, 208, 0.082);
+    font-size: 18px;
+} 
+.contact-form{
+    margin-top: 100px;
+    color: #ff5722;
+    text-transform: uppercase;
+    transition: all 4s ease-in-out;
+    text-align: center;
+}
+
+.contact-form h1{
+    font-size: 32px;
+    color: #f44336;
+    font-weight: bold;
+}
+
+
+form{
+    margin-top: 50px;
+    transition: all 4s ease-in-out ;
+}
+
+.form-control{
+    width: 400px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    color: rgb(228, 120, 20);
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+input{
+    height: 45px;
+}
+
+form .submit{
+    background: #ff5722;
+    border: transparent;
+    color: rgb(214, 209, 209);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+form .submit:hover{
+    background: #f44336;
+    cursor: pointer;
+}
+
+.column{
+    color: rgb(12, 12, 12);
+    font-size: 18px;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.deletebtn{
+    background-color: #f44336;
+    color: white;
+    border-radius: 9px;
+    font-size: 10px;
+    padding: 10px 24px;
+}
+
+.editbtn{
+    background-color: #4ca504;
+    color: white;
+    border-radius: 9px;
+    font-size: 10px;
+    padding: 10px 24px;
+}
