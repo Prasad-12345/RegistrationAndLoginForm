@@ -5,16 +5,18 @@
     $row = mysqli_fetch_assoc($result1);
     $srno = $row['srno'];
     $emp_id = $row['emp_id'];
-    $address = $row['address'];
+    $name = $row['name'];
+    $city = $row['city'];
     $zipcode = $row['zipcode'];
     $salary = $row['salary'];
         if(isset($_POST['update'])){
             // $srno = $_POST['srno'];
             // $emp_id = $_POST['emp_id'];
-            $address = $_POST['address'];
+            $name = $_POST['name'];
+            $city = $_POST['city'];
             $zipcode = $_POST['zipcode'];
             $salary = $_POST['salary'];
-            $sql = "update employee_data set address = '$address', zipcode = '$zipcode', salary = '$salary' where emp_id = $emp_id";
+            $sql = "update employee_data set name = '$name', city = '$city', zipcode = '$zipcode', salary = '$salary' where emp_id = $emp_id";
             $result = mysqli_query($conn, $sql);
             if($result){
                 header("location: EmployeeForm.php");
@@ -39,7 +41,8 @@
     </div>
     <div class="contact-us">
         <form action="" method="post">
-            <input type="text" name="address" class="form-control" placeholder="Enter Address" value=<?php echo $address ?>><br>
+            <input type="text" name="name" class="form-control" placeholder="Enter name" value=<?php echo $name ?>><br>
+            <input type="text" name="city" class="form-control" placeholder="Enter city" value=<?php echo $city ?>><br>
             <input type="text" name="zipcode" class="form-control" placeholder="Enter zipcode" value=<?php echo $zipcode ?>>><br>
             <input type="text" name="salary" class="form-control" placeholder="Enter salary" value=<?php echo $salary ?>>><br>
             <input type="submit" class="form-control submit" name="update" value="update">
