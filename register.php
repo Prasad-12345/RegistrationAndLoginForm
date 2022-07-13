@@ -15,12 +15,12 @@
     <div class="contact-us">
         <form action="SQLQuery.php" method="post">
             <input type="text" name="srno" class="form-control" pattern="[0-9]{1,}" placeholder="Enter srno" required><br>
-            <input type="text" name="firstName" class="form-control" pattern="[A-Za-z]{3,}" placeholder="Enter First Name" required><br>
+            <input type="text" name="firstName" class="form-control"  placeholder="Enter First Name" pattern="[A-Za-z]{3,}" title = "FirstName should have more than two charcters and only alphabets are allowed e.g: Prasad" required><br>
             <input type="text" name="lastName" class="form-control" pattern="[A-Za-z]{3,}"placeholder="EnterLast Name" required><br>
-            <input type="email" name="email" class="form-control" pattern="^[0-9a-zA-Z+-_.]+@[0-9a-zA-Z!#$%&*()_.]+"placeholder="Enter Email" required><br>
-            <input type="text" name="phonenumber" class="form-control" pattern="[0-9]{10}" placeholder="Enter Mobile Number" required><br>
-            <input type="text" name="password" class="form-control" pattern="[0-9a-zA-Z!#$%&*()_.@]{8,}" placeholder="Enter Password" required><br>
-            <input type="text" name="conformpassword" class="form-control" pattern="[0-9a-zA-Z!#$%&*()_.@]{8,}" placeholder="Conform Password" required><br>
+            <input type="text" name="email" class="form-control" placeholder="Enter Email" pattern="^[0-9a-zA-Z+-_.]+@[a-zA-Z]+.[azA-Z]+" title="Email should contain @ and you can use numbers, alphabets and special charcters" required><br>
+            <input type="text" name="phonenumber" class="form-control"  placeholder="Enter Mobile Number" pattern="[0-9]{10}" title="Mobile number should contain 10 digits" required><br>
+            <input type="text" name="password" class="form-control"  placeholder="Enter Password" pattern="[0-9a-zA-Z!#$%&*()_.@]{8,}" title="Password length should be greater than 7 and use alphabets, numbers and specialcharcters" required><br>
+            <input type="text" name="conformpassword" class="form-control" placeholder="Conform Password" pattern="[0-9a-zA-Z!#$%&*()_.@]{8,}" title="Password length should be greater than 7 and use alphabets, numbers and specialcharcters" required><br>
             <input type="submit" class="form-control submit" value="submit" name="submit">
         </form>
     </div>
@@ -45,6 +45,10 @@
         $result = mysqli_query($conn, $sql);
         if($result){
             while($row=mysqli_fetch_assoc($result)){
+              if($_POST['name'] == $row['firstName']){
+                  echo "Contact Already exists";
+              }
+              else{
                 $srno = $row['srno'];
                 $firstName = $row['firstName'];
                 $lastName = $row['lastName'];
@@ -63,6 +67,8 @@
                 <button class = "btn btn-danger"><a href="Delete.php?deleteid='.$srno.'" class = "text-light">Delete</a></button>
                 </td>
               </tr>';
+              }
+          
             }
         }
     ?>
